@@ -1,0 +1,36 @@
+.drinksSeller{
+    color: white; 
+}
+
+body {
+    overflow-y: hidden;
+    background-color: rgb(32, 29, 37);
+}
+
+.endPanel {
+    width: 20vw;
+    white-space: nowrap;
+    margin-top: 1px;
+    margin-left: 0vw;
+}
+
+.endPanelItem {
+    display:inline-block;
+}
+
+.infoCheck {
+    display:inline-block;
+    background-color: aliceblue;
+    color: black;
+    padding: 5px;
+    border-radius: 10px;
+    
+}
+
+.infoCheckPanel {
+   
+    margin-left: 1vw;
+    height: 3px;
+    margin-top: -10px;
+    margin-bottom: 7px;
+}

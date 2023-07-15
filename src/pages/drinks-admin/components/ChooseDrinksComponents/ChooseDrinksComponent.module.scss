@@ -1,0 +1,17 @@
+.chooseDrinks{
+    height: 70vh;
+    border-bottom: 2px solid;
+    border-color: white;
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+        background-color: rgba(255, 255, 255, 0);
+    }
+    
+    &::-webkit-scrollbar-thumb {
+        background-color: rgba(100, 123, 201, 0.404);
+        border-radius: 1px;
+    }
+}
+
+

@@ -1,0 +1,22 @@
+.helloPage {
+    background-color: rgb(70, 56, 122);
+}
+
+
+
+.GoButton {
+    position: fixed; /* or absolute */
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    height: 100px;
+    margin: -50px 0 0 -100px;
+    border-radius: 20px;
+
+    line-height: 100px;
+    background-color: aquamarine;
+}
+
+.GoButton:hover {
+    background-color: rgb(85, 168, 141);
+}
