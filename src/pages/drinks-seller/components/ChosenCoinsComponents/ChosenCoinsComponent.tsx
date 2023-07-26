@@ -24,7 +24,7 @@ export const ChosenCoinsComponent = (props: ChosenCoinsComponent) => {
 
     return (
         <div className={styles.chosenCoins}>
-            { chosenCoins.map(c => <ChosenCoinComponent coin={c}/>) }
+            { chosenCoins.map((c, key)=> <ChosenCoinComponent key={key} coin={c}/>) }
         </div>
     )
 }

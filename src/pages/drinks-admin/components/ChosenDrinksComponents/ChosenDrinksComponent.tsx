@@ -1,5 +1,4 @@
 import { Drink } from '../../../models/drink'
-import { v4 as uuidv4 } from 'uuid'
 import { ChosenDrinkComponent } from './components/ChosenDrinkComponent'
 import styles from './ChosenDrinksComponent.module.scss'
 import { ChosenDrink } from './Models/ChosenDrink'
@@ -21,6 +20,8 @@ export const ChosenDrinksComponent = (props: ChosenDrinksComponentProps) => {
             else drinks[idx].quantity = quantity     
         })
     }
+
+    
 
     return (
         <div  className={styles.chosenDrinks}>

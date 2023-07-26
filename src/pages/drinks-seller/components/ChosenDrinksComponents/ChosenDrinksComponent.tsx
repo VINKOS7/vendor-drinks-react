@@ -1,5 +1,4 @@
 import { Drink } from '../../../models/drink'
-import { v4 as uuidv4 } from 'uuid'
 import { ChosenDrinkComponent } from './components/ChosenDrinkComponent'
 import styles from './ChosenDrinksComponent.module.scss'
 import { ChosenDrink } from './Models/ChosenDrink'
@@ -25,7 +24,7 @@ export const ChosenDrinksComponent = (props: ChosenDrinksComponentProps) => {
     return (
         <div  className={styles.chosenDrinks}>
             {drinks.length === 0 && <div>choose drink</div>}
-            {drinks.map(d => <ChosenDrinkComponent drink={d}/>)}
+            {drinks.map((d, key) => <ChosenDrinkComponent key={key} drink={d}/>)}
         </div>
     )
 }

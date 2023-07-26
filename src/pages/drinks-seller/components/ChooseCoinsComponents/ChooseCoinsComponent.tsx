@@ -18,7 +18,7 @@ export const ChooseCoinsComponent = (props: ChooseCoinsComponentProps) => {
 
     return (
         <div className={styles.chooseCoins}>
-            {GetCoins().map(c => <ChooseCoinComponent AddCoinsChosen={props.AddCoinsChosen} coin={c}/>)}
+            {GetCoins().map((c, key) => <ChooseCoinComponent key={key} AddCoinsChosen={props.AddCoinsChosen} coin={c}/>)}
         </div>
     )
 }

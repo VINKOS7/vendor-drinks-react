@@ -16,7 +16,6 @@ import { Login } from "../components/Login/Login"
 import userManager from "../../connection/userManager"
 
 export const DrinksAdmin = () => {
-    const navigate = useNavigate();
     const drinks = GetDrinks()
     const [drinksChosen, setDrinksChosen] = useState([] as Drink[])
     const [drinksChoose, setDrinksChoose] = useState(drinks)
@@ -26,7 +25,6 @@ export const DrinksAdmin = () => {
     const login = getAccessToken()
   
     if(!login) {
-
         userManager.signinRedirect()
     }
 

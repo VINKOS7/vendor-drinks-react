@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { Drink } from "../models/drink"
 
 import styles from "./DrinksSeller.module.scss"
@@ -11,15 +11,12 @@ import { ChooseCoinsComponent } from "./components/ChooseCoinsComponents/ChooseC
 import { ChosenDrinksComponent } from "./components/ChosenDrinksComponents/ChosenDrinksComponent"
 import { ButtonDropComponent } from "./components/ButtonComponents/ButtonDropComponent"
 import { ButtonBuyComponent } from "./components/ButtonComponents/ButtonBuyComponent"
-import { useLazyGetIdsBlockStatusDrinkQuery } from "../../connection/vendor-drinks/vendorDrinksApi"
-import { GetBlockIdsDrinkRequest } from "../../connection/vendor-drinks/requests"
-import { rejects } from "assert"
 
 export const DrinksSeller = () => {
-    //const [getBlockIds] = useGetIdsBlockStatusDrinkMutation()
     const [drinksChosen, setDrinksChosen] = useState([] as Drink[])
     const [coinsChosen, setCoinsChosen] = useState([] as Coin[])
     const [drinksChoose, setDrinksChoose] = useState(GetDrinks())
+
     const price = drinksChosen.map(d => d.price*d.quantity).reduce((partialSum, a) => partialSum + a, 0)
     const money = coinsChosen.map(c => c.value).reduce((partialSum, a) => partialSum + a, 0)
 
@@ -47,8 +44,11 @@ export const DrinksSeller = () => {
     }
 
     const Drop = () => {
-        setDrinksChosen([])
-        setDrinksChoose(GetDrinks())
+        const data = localStorage.getItem("drinks")
+
+        if(data) setDrinksChoose(JSON.parse(data) as Drink[])
+
+        setDrinksChosen([])    
         setCoinsChosen([])
     }
 
